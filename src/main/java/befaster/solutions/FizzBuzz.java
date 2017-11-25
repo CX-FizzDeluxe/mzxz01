@@ -2,21 +2,20 @@ package befaster.solutions;
 
 public class FizzBuzz {
 
-	public static boolean singleDigitNumber(String number){
-		if (number.length()==1)
+	public static boolean singleDigitNumber(String number) {
+		if (number.length() == 1)
 			return true;
 		char c = number.charAt(0);
-		for(int i = 1;i<number.length();i++){
-			if (number.charAt(i)!=c)
+		for (int i = 1; i < number.length(); i++) {
+			if (number.charAt(i) != c)
 				return false;
 		}
 		return true;
 	}
 
-
-	public static String deluxeSuffix(Integer number){
-		if (singleDigitNumber(number.toString()) && number>10)
-		return  number % 2 ==0 ? " deluxe": "fake deluxe";
+	public static String deluxeSuffix(Integer number) {
+		if (singleDigitNumber(number.toString()) && number > 10)
+			return number % 2 == 0 ? " deluxe" : " fake deluxe";
 		return "";
 	}
 
@@ -29,8 +28,9 @@ public class FizzBuzz {
 			return "buzz" + deluxeSuffix(number);
 		if (number % 3 == 0 || numStr.contains("3"))
 			return "fizz" + deluxeSuffix(number);
-		if (singleDigitNumber(numStr) && number>10)
-			return "deluxe";
+		// refactor this!
+		if (singleDigitNumber(numStr) && number > 10)
+			return number % 2 == 0 ? " deluxe" : " fake deluxe";
 		return numStr;
 	}
 
