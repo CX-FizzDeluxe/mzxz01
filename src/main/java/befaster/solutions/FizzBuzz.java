@@ -19,7 +19,7 @@ public class FizzBuzz {
 		return "";
 	}
 
-	public static void main(String args[]){
+	public static void main(String args[]) {
 		System.out.println(fizzBuzz(13));
 	}
 
@@ -30,6 +30,10 @@ public class FizzBuzz {
 				return "fizz buzz"
 						+ (number % 2 == 0 ? " deluxe" : " fake deluxe");
 			}
+			return "fizz buzz";
+		}
+		if ((number % 5 == 0 || numStr.contains("5"))
+				&& (number % 3 == 0 || numStr.contains("3"))) {
 			return "fizz buzz";
 		}
 		if (number % 5 == 0 && numStr.contains("5")) {
