@@ -26,7 +26,7 @@ public class FizzBuzz {
 			return "buzz" + deluxeSuffix(number);
 		if (number % 3 == 0 || numStr.contains("3"))
 			return "fizz" + deluxeSuffix(number);
-		return numStr;
+		return numStr + deluxeSuffix(number).trim();
 	}
 
 }
