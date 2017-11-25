@@ -13,8 +13,11 @@ public class FizzBuzz {
 		return true;
 	}
 
+
 	public static String deluxeSuffix(Integer number){
-		return singleDigitNumber(number.toString()) && number>10 ? " deluxe": "";
+		if (singleDigitNumber(number.toString()) && number>10)
+		return  number % 2 ==0 ? " deluxe": "fake deluxe";
+		return "";
 	}
 
 	public static String fizzBuzz(Integer number) {
