@@ -19,10 +19,6 @@ public class FizzBuzz {
 		return "";
 	}
 
-	public static void main(String args[]){
-		System.out.println(fizzBuzz(13));
-	}
-
 	public static String fizzBuzz(Integer number) {
 		String numStr = String.valueOf(number);
 		if ((number % 5 == 0) && (number % 3 == 0)) {
