@@ -28,9 +28,10 @@ public class FizzBuzz {
 			}
 			return "fizz buzz";
 		}
-		if (number % 5 == 0)
+		if (number % 5 == 0 || numStr.contains("5")){
 			return "buzz" + deluxeSuffix(number, "5");
-		if (number % 3 == 0)
+		}
+		if (number % 3 == 0 || numStr.contains("3"))
 			return "fizz" + deluxeSuffix(number, "3");
 		return numStr;
 	}
