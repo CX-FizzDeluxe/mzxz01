@@ -3,13 +3,15 @@ package befaster.solutions;
 public class FizzBuzz {
 
 	public static String fizzBuzz(Integer number) {
-		if (number % 3 == 0 && number % 5 == 0)
+		String numStr = String.valueOf(number);
+		if ((number % 5 == 0 || numStr.contains("5"))
+				&& (number % 3 == 0 || numStr.contains("3")))
 			return "fizz buzz";
-		if (number % 5 == 0)
+		if (number % 5 == 0 || numStr.contains("5"))
 			return "buzz";
-		if (number % 3 == 0)
+		if (number % 3 == 0 || numStr.contains("3"))
 			return "fizz";
-		return String.valueOf(number);
+		return numStr;
 	}
 
 }
