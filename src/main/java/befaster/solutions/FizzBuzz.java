@@ -25,7 +25,7 @@ public class FizzBuzz {
 			sb.append("fizz");
 		if (number>10 && singleDigitNumber(numStr))
 			sb.append(" deluxe");
-		return sb.toString();
+		return sb.length()==0 ? numStr : sb.toString();
 	}
 
 }
