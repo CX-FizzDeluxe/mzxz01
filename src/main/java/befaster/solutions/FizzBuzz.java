@@ -21,27 +21,17 @@ public class FizzBuzz {
 
 	public static String fizzBuzz(Integer number) {
 		String numStr = String.valueOf(number);
-		if ((number % 5 == 0) && (number % 3 == 0))
-			return "fizz buzz" + deluxeSuffix(number, "");
+		if ((number % 5 == 0) && (number % 3 == 0)) {
+			if (numStr.contains("3") && numStr.contains("5")) {
+				return "fizz buzz"
+						+ (number % 2 == 0 ? " deluxe" : " fake deluxe");
+			}
+			return "fizz buzz";
+		}
 		if (number % 5 == 0)
 			return "buzz" + deluxeSuffix(number, "5");
 		if (number % 3 == 0)
 			return "fizz" + deluxeSuffix(number, "3");
-		return numStr;
-	}
-
-	public static String fizzBuzzOld(Integer number) {
-		String numStr = String.valueOf(number);
-		if ((number % 5 == 0 || numStr.contains("5"))
-				&& (number % 3 == 0 || numStr.contains("3")))
-			return "fizz buzz" + deluxeSuffix(number);
-		if (number % 5 == 0 || numStr.contains("5"))
-			return "buzz" + deluxeSuffix(number);
-		if (number % 3 == 0 || numStr.contains("3"))
-			return "fizz" + deluxeSuffix(number);
-		// refactor this!
-		if (singleDigitNumber(numStr) && number > 10)
-			return number % 2 == 0 ? "deluxe" : "fake deluxe";
 		return numStr;
 	}
 
