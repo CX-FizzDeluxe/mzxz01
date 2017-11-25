@@ -13,13 +13,28 @@ public class FizzBuzz {
 		return true;
 	}
 
-	public static String deluxeSuffix(Integer number) {
-		if (singleDigitNumber(number.toString()) && number > 10)
+	public static String deluxeSuffix(Integer number, String digit) {
+		if (number.toString().contains(digit))
 			return number % 2 == 0 ? " deluxe" : " fake deluxe";
 		return "";
 	}
 
 	public static String fizzBuzz(Integer number) {
+		String numStr = String.valueOf(number);
+		if ((number % 5 == 0 && numStr.contains("5"))
+				&& (number % 3 == 0 && numStr.contains("3")))
+			return "fizz buzz" + deluxeSuffix(number);
+		if (number % 5 == 0 && numStr.contains("5"))
+			return "buzz" + deluxeSuffix(number);
+		if (number % 3 == 0 && numStr.contains("3"))
+			return "fizz" + deluxeSuffix(number);
+		// refactor this!
+		if (singleDigitNumber(numStr) && number > 10)
+			return number % 2 == 0 ? "deluxe" : "fake deluxe";
+		return numStr;
+	}
+
+	public static String fizzBuzzOld(Integer number) {
 		String numStr = String.valueOf(number);
 		if ((number % 5 == 0 || numStr.contains("5"))
 				&& (number % 3 == 0 || numStr.contains("3")))
