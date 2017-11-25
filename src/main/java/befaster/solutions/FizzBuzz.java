@@ -26,7 +26,7 @@ public class FizzBuzz {
 	public static String fizzBuzz(Integer number) {
 		String numStr = String.valueOf(number);
 		if ((number % 5 == 0) && (number % 3 == 0)) {
-			if (numStr.contains("3") && numStr.contains("5")) {
+			if (numStr.contains("3") || numStr.contains("5")) {
 				return "fizz buzz"
 						+ (number % 2 == 0 ? " deluxe" : " fake deluxe");
 			}
