@@ -30,7 +30,7 @@ public class FizzBuzz {
 			return "fizz" + deluxeSuffix(number);
 		// refactor this!
 		if (singleDigitNumber(numStr) && number > 10)
-			return number % 2 == 0 ? " deluxe" : " fake deluxe";
+			return number % 2 == 0 ? "deluxe" : "fake deluxe";
 		return numStr;
 	}
 
