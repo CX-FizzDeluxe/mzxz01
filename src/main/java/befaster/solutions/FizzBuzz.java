@@ -13,19 +13,20 @@ public class FizzBuzz {
 		return true;
 	}
 
+	public static String deluxeSuffix(Integer number){
+		return singleDigitNumber(number.toString()) && number>10 ? " deluxe": "";
+	}
+
 	public static String fizzBuzz(Integer number) {
 		String numStr = String.valueOf(number);
-		StringBuilder sb = new StringBuilder();
 		if ((number % 5 == 0 || numStr.contains("5"))
 				&& (number % 3 == 0 || numStr.contains("3")))
-			sb.append("fizz buzz");
+			return "fizz buzz" + deluxeSuffix(number);
 		if (number % 5 == 0 || numStr.contains("5"))
-			sb.append("buzz");
+			return "buzz" + deluxeSuffix(number);
 		if (number % 3 == 0 || numStr.contains("3"))
-			sb.append("fizz");
-		if (number>10 && singleDigitNumber(numStr))
-			sb.append(" deluxe");
-		return sb.length()==0 ? numStr : sb.toString();
+			return "fizz" + deluxeSuffix(number);
+		return numStr;
 	}
 
 }
